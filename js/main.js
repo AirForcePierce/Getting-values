@@ -65,7 +65,7 @@
 
 
 
-//Answer 2 Still need to break into seperate li elements
+//Answer 2 
 var brandNew = [];
 
 var avgprice = items.filter(function (item) {
@@ -97,14 +97,13 @@ var maltLiquor = items.filter(function (item) {
   answer3a.appendChild(textNode3a);
 
 
-  // Answer 4
+  //Answer 4
 
   var woodyWood = [];
 
   var hardKnocks = items.filter(function (obj) {
     if (obj.materials.indexOf('wood') !== -1) {
       woodyWood.push(obj.title);
-      // console.log(woodyWood);
     };
 });
 
