@@ -40,7 +40,7 @@
 
 
 
-//Answer 2
+//Answer 2 Still need to break into seperate li elements
 var brandNew = [];
 
 var avgprice = items.filter(function (item) {
@@ -49,7 +49,7 @@ var avgprice = items.filter(function (item) {
     // console.log(brandNew);
   };
 });
-  console.log(brandNew);
+  // console.log(brandNew);
 
 
   var answer2 = document.querySelector('#answer2');
@@ -62,4 +62,40 @@ var avgprice = items.filter(function (item) {
   answer2.appendChild(document.createTextNode(x + "\n\n\n"));
 });
 
+//Answer 3
+var fortyOz1 = [];
+var fortyOz2 = [];
+
+var maltLiquor = items.filter(function (item) {
+  if (item.currency_code === 'GBP') {
+    fortyOz1.push(item.title);
+    fortyOz2.push(item.price);
+    // console.log(fortyOz);
+  };
+});  
+
+  var answer3a = document.querySelector('#answer3a');
+  var textNode3a = document.createTextNode(fortyOz1 + ' costs ' + fortyOz2);
+
+  var answer3b = document.querySelector('#answer3b');
+  var textNode3b = document.createTextNode(fortyOz2);
+
+  answer3a.appendChild(textNode3a);
+
+
+  // Answer 4
+
+  var woodyWood = [];
+
+  var hardKnocks = items.filter(function (item) {
+  if (item.materials == 'wood') {
+    woodyWood.push(item.title);
+    console.log(woodyWood);
+  };
+});
+
+
 }());
+
+
+
