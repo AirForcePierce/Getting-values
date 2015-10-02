@@ -38,6 +38,31 @@
 
   answer1.appendChild(textNode);
 
+    // Create a list & add to document(HTML) at given selector
+ function addList(selector, list) {
+   var container = document.querySelector(selector);
+   var ul = document.createElement('ul');
+
+   list.forEach(function(item){
+     var li = document.createElement('li');
+     var node = document.createTextNode(item);
+
+     li.appendChild(node);
+     ul.appendChild(li);
+   });
+
+   container.appendChild(ul);
+ };
+
+// Create a pargraph and add to document(HTML) at given selector
+  function addParagraph(selector, text) {
+    var container = document.querySelector(selector);
+    var p = document.createElement('p');
+    var node = document.createTextNode(text);
+    p.appendChild(node);
+    container.appendChild(p);
+  };
+
 
 
 //Answer 2 Still need to break into seperate li elements
@@ -49,18 +74,7 @@ var avgprice = items.filter(function (item) {
     // console.log(brandNew);
   };
 });
-  // console.log(brandNew);
-
-
-  var answer2 = document.querySelector('#answer2');
-  // var textNode2 = document.createTextNode(brandNew);
-
-  // answer2.appendChild(textNode2);
-  var numberOfListItems = brandNew.length;
-
-  brandNew.forEach(function (x) {
-  answer2.appendChild(document.createTextNode(x + "\n\n\n"));
-});
+  addList('#answer2', brandNew);
 
 //Answer 3
 var fortyOz1 = [];
@@ -87,12 +101,68 @@ var maltLiquor = items.filter(function (item) {
 
   var woodyWood = [];
 
-  var hardKnocks = items.filter(function (item) {
-  if (item.materials == 'wood') {
-    woodyWood.push(item.title);
-    console.log(woodyWood);
-  };
+  var hardKnocks = items.filter(function (obj) {
+    if (obj.materials.indexOf('wood') !== -1) {
+      woodyWood.push(obj.title);
+      // console.log(woodyWood);
+    };
 });
+
+  var wood1 = woodyWood.shift();
+  var wood2 = woodyWood.shift();
+  var wood3 = woodyWood.shift();
+  var wood4 = woodyWood.shift();
+  var wood5 = woodyWood.shift();
+
+  var answer4a = document.querySelector('#answer4a');
+  var textNode4a = document.createTextNode(wood1);
+
+  answer4a.appendChild(textNode4a);
+
+  var answer4b = document.querySelector('#answer4b');
+  var textNode4b = document.createTextNode(wood2);
+
+  answer4b.appendChild(textNode4b);
+
+  var answer4c = document.querySelector('#answer4c');
+  var textNode4c = document.createTextNode(wood3);
+
+  answer4c.appendChild(textNode4c);
+
+  var answer4d = document.querySelector('#answer4d');
+  var textNode4d = document.createTextNode(wood4);
+
+  answer4d.appendChild(textNode4d);
+
+  var answer4e = document.querySelector('#answer4e');
+  var textNode4e = document.createTextNode(wood5);
+
+  answer4e.appendChild(textNode4e); 
+
+  //Answer 5
+
+  var manyMats = items.filter(function (obj) {
+    if (obj.materials.length > 8) {
+      return true
+    };  
+});
+    manyMats.forEach(function (obj) {
+      addParagraph('#answer5', obj.title + ' has' + obj.materials.length + ' materials:');
+      addList('#answer5', obj.materials);
+    });  
+
+  //Answer 6
+
+  var createMan = items.filter(function (obj) {
+    return obj['who_made'] === 'i_did';
+  });
+
+  addParagraph('#answer6', createMan.length + ' were made by their sellers');
+
+
+
+
+
 
 
 }());
