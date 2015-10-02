@@ -39,46 +39,27 @@
   answer1.appendChild(textNode);
 
 
-}());
-
 
 //Answer 2
+var brandNew = [];
 
-(function () {
-
-    var prices = items.map(function (item) {
-    return item.price;
-  });
-
-  console.log(prices);
-
-
+var avgprice = items.filter(function (item) {
+  if (item.price > 14  && item.price < 18) {
+    brandNew.push(item.title);
+    // console.log(brandNew);
+  };
+});
+  console.log(brandNew);
 
 
+  var answer2 = document.querySelector('#answer2');
+  // var textNode2 = document.createTextNode(brandNew);
+
+  // answer2.appendChild(textNode2);
+  var numberOfListItems = brandNew.length;
+
+  brandNew.forEach(function (x) {
+  answer2.appendChild(document.createTextNode(x + "\n\n\n"));
 });
 
-
-
-
-
-
-
-
-
-
-
-
-// (function (totalAvg) {
-  
-
-//   console.log(items);
-//   var arrayPrice = [];
-
-//   items.map(function() {
-//       for (i = 0; i < 25; i++)
-//        var item = items[i].price * parseInt(items[i].quantity);
-//          arrayPrice.push(item);
-//   }); //end of map method;
-
-//   console.log(arrayPrice);
-// }());
+}());
