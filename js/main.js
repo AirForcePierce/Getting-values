@@ -89,7 +89,7 @@ var maltLiquor = items.filter(function (item) {
 });  
 
   var answer3a = document.querySelector('#answer3a');
-  var textNode3a = document.createTextNode(fortyOz1 + ' costs ' + fortyOz2);
+  var textNode3a = document.createTextNode(fortyOz1 + ' costs \u00A3' + fortyOz2);
 
   var answer3b = document.querySelector('#answer3b');
   var textNode3b = document.createTextNode(fortyOz2);
