@@ -16,20 +16,15 @@
     return prev + next;
   })
 
-  // console.log(sum);
-
 //Getting avg from the sum  
 
   var avg = sum / items.length;
-  // console.log(avg);
 
 //Convert to 2 decimal places
 
   var converted = avg.toFixed(2);
-  // console.log(converted);
 
   var str = 'The average price is $' + converted;
-  // console.log(str);
 
 //Transfer string to the p element  
 
@@ -66,17 +61,18 @@
 
 
 //Answer 2 
+
 var brandNew = [];
 
 var avgprice = items.filter(function (item) {
   if (item.price > 14  && item.price < 18) {
     brandNew.push(item.title);
-    // console.log(brandNew);
   };
 });
   addList('#answer2', brandNew);
 
 //Answer 3
+
 var fortyOz1 = [];
 var fortyOz2 = [];
 
@@ -84,7 +80,6 @@ var maltLiquor = items.filter(function (item) {
   if (item.currency_code === 'GBP') {
     fortyOz1.push(item.title);
     fortyOz2.push(item.price);
-    // console.log(fortyOz);
   };
 });  
 
@@ -157,11 +152,6 @@ var maltLiquor = items.filter(function (item) {
   });
 
   addParagraph('#answer6', createMan.length + ' were made by their sellers');
-
-
-
-
-
 
 
 }());
