@@ -62,6 +62,8 @@
 
 //Answer 2 
 
+  //searching and pushing out items between 14 - 18 dollars
+
 var brandNew = [];
 
 var avgprice = items.filter(function (item) {
@@ -69,9 +71,14 @@ var avgprice = items.filter(function (item) {
     brandNew.push(item.title);
   };
 });
+
+  //listing the items
+
   addList('#answer2', brandNew);
 
-//Answer 3
+  //Answer 3
+
+  //filtering out title and price of items with GBP code
 
 var fortyOz1 = [];
 var fortyOz2 = [];
@@ -82,6 +89,8 @@ var maltLiquor = items.filter(function (item) {
     fortyOz2.push(item.price);
   };
 });  
+
+  //posting answers to html and adding pound code before price
 
   var answer3a = document.querySelector('#answer3a');
   var textNode3a = document.createTextNode(fortyOz1 + ' costs \u00A3' + fortyOz2);
@@ -94,6 +103,8 @@ var maltLiquor = items.filter(function (item) {
 
   //Answer 4
 
+  //looking for objs that have the material wood and pushing them to another array
+
   var woodyWood = [];
 
   var hardKnocks = items.filter(function (obj) {
@@ -102,11 +113,16 @@ var maltLiquor = items.filter(function (item) {
     };
 });
 
+
+  //taking new array and pushing answers to other vars
+
   var wood1 = woodyWood.shift();
   var wood2 = woodyWood.shift();
   var wood3 = woodyWood.shift();
   var wood4 = woodyWood.shift();
   var wood5 = woodyWood.shift();
+
+  //sending all individual vars to html list
 
   var answer4a = document.querySelector('#answer4a');
   var textNode4a = document.createTextNode(wood1);
@@ -135,11 +151,16 @@ var maltLiquor = items.filter(function (item) {
 
   //Answer 5
 
+  //Looking for obj with that has more than 8 materials
+
   var manyMats = items.filter(function (obj) {
     if (obj.materials.length > 8) {
       return true
     };  
 });
+
+  //taking the answer and displaying how many materials it has and adding a list of the materials
+
     manyMats.forEach(function (obj) {
       addParagraph('#answer5', obj.title + ' has' + obj.materials.length + ' materials:');
       addList('#answer5', obj.materials);
